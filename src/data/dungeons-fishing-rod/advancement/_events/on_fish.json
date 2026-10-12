@@ -1,0 +1,22 @@
+{
+	"criteria": {
+		"on_fish": {
+			"trigger": "fishing_rod_hooked",
+			"conditions": {
+				"rod": {
+					"items": "#enchantable/fishing",
+					"predicates": {
+						"enchantments": [
+							{
+								"enchantments": "dungeons-fishing-rod:stunning"
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "dungeons-fishing-rod:_events/on_fish"
+	}
+}
