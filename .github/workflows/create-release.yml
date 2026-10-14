@@ -43,6 +43,19 @@ jobs:
           mv pack.mcmeta.tmp src/pack.mcmeta
           cat src/pack.mcmeta
 
+      - name: Commit pack.mcmeta update
+        run: |
+          if git diff --quiet -- src/pack.mcmeta; then
+            echo "pack.mcmeta already at v$RELEASE_VERSION, nothing to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/pack.mcmeta
+            git commit -m "Release v$RELEASE_VERSION"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
+          echo "RELEASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
       - name: Build pack
         run: |
           beet build -j > build.json
@@ -60,6 +73,6 @@ jobs:
         run: |
           gh release create "v$RELEASE_VERSION" \
             "$ASSET_NAME" \
-            --target "$GITHUB_SHA" \
+            --target "$RELEASE_SHA" \
             --title "$REPO_NAME v$RELEASE_VERSION" \
             --notes "Supports Minecraft $MINECRAFT_VERSIONS"
