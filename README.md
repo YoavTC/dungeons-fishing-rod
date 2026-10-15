@@ -1,5 +1,7 @@
 # Dungeons Fishing Rod
 
+<img width="480" height="270" alt="showcase" src="https://github.com/user-attachments/assets/0b62373c-6a7e-4620-a780-d68612d9d31b" />
+
 ## Installation
 
 1. Download the latest version from one of the following sources:
