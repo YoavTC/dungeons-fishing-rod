@@ -7,7 +7,7 @@
 1. Download the latest version from one of the following sources:
 
     - [GitHub Releases](https://github.com/YoavTC/dungeons-fishing-rod/releases)
-    - Modrinth (coming soon)
+    - [Modrinth](https://modrinth.com/project/dungeons-fishing-rod/versions)
     - CurseForge (coming soon)
 
 2. Place the downloaded zip file in your world's datapack folder
